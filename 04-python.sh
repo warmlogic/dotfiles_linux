@@ -1,9 +1,23 @@
 #!/usr/bin/env bash
 
-mkdir $HOME/Downloads
+# make a Downloads folder
+{
+if [ ! -d "$HOME/Downloads" ]; then
+    mkdir "$HOME/Downloads"
+fi
+}
+
 MC_DL_FILE="Miniconda3-latest-Linux-x86_64.sh"
 MC_DL_PATH="$HOME/Downloads/$MC_DL_FILE"
 MC_DIR="$HOME/miniconda3"
+
+# # Exit if miniconda file already exists
+# {
+# if [ -f "$MC_DL_PATH" ]; then
+#     echo "$MC_DL_PATH already exists! Delete before running this script to ensure installation is up-to-date."
+#     exit 0
+# fi
+# }
 
 # Download miniconda file only if it does not already exist
 {
@@ -52,35 +66,53 @@ jupyter_contrib_nbextensions
 s3fs
 networkx'
 
-conda install $packages -y
+# # Install packages in root environment
+# conda install $packages -y
 
-# additional packages
-pip install -U lightgbm # https://github.com/Microsoft/LightGBM
-# pip install -U xgboost
-pip install -U imbalanced-learn
+# Create separate environment called py3
+conda create -q --name py3 python=3 $packages -y
+source activate py3
+
+# Dataset profiling and loading
 pip install -U xlrd
-pip install -U tqdm
 pip install -U pandas-profiling # https://github.com/pandas-profiling/pandas-profiling
-pip install -U pandas-datareader # https://github.com/pydata/pandas-datareader
-pip install -U graphviz
 pip install -U missingno # https://github.com/ResidentMario/missingno
-pip install -U pytest
+pip install -U imbalanced-learn
+pip install -U pandas-datareader # https://github.com/pydata/pandas-datareader
 # pip install -U kaggle-cli
 
-# NLP packages
-pip install -U ftfy # https://github.com/LuminosoInsight/python-ftfy
-pip install -U nltk
+# Utility packages
+pip install -U graphviz
+pip install -U tqdm
+pip install -U pytest
+
+# ML packages
+pip install -U lightgbm # https://github.com/Microsoft/LightGBM
+pip install -U xgboost
+
+# Foundational NLP packages
 pip install -U spacy # https://spacy.io/
-python -m spacy download en_core_web_md
-# pip install -U thinc # https://github.com/explosion/thinc
+python -m spacy download en_core_web_lg
 pip install -U gensim # https://radimrehurek.com/gensim/
-pip install -U pyldavis # https://github.com/bmabey/pyLDAvis
-# pip install -U fuzzywuzzy # https://github.com/seatgeek/fuzzywuzzy
-# pip install -U python-Levenshtein # for fuzzywuzzy
-# pip install -U textacy # https://github.com/chartbeat-labs/textacy
+pip install -U nltk
+
+# NLP building on top of spaCy or others
+pip install -U textacy # https://github.com/chartbeat-labs/textacy
+# pip install -U thinc # https://github.com/explosion/thinc
 # pip install -U pattern # https://github.com/clips/pattern
 
-# neural network packages
+# NLP utilities
+pip install -U ftfy # https://github.com/LuminosoInsight/python-ftfy
+pip install -U fuzzywuzzy # https://github.com/seatgeek/fuzzywuzzy
+pip install -U python-Levenshtein # for fuzzywuzzy
+pip install -U pyldavis # https://github.com/bmabey/pyLDAvis
+
+# # Neural network packages
 # pip install -U tensorflow
 # pip install -U keras
-# http://pytorch.org/
+# # http://pytorch.org/
+
+# Add Jupyter kernel for this environment and set the display name
+# http://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments
+python -m ipykernel install --user --name py3 --display-name "py3"
+source deactivate
