@@ -9,7 +9,7 @@ function doIt() {
         --exclude ".DS_Store" \
         --exclude ".extra" \
         --exclude "01-bootstrap.sh" \
-        --exclude "03-linux.sh" \
+        --exclude "03-ubuntu.sh" \
         --exclude "04-python.sh" \
         --exclude "README.md" \
         --exclude "LICENSE-MIT.txt" \
