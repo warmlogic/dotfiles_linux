@@ -67,12 +67,9 @@ jupyter_contrib_nbextensions
 s3fs
 networkx'
 
-# Install packages in root environment
-conda install $packages -y
-
-# # Create separate environment called py3
-# conda create -q --name py3 python=3 $packages -y
-# source activate py3
+# Create separate environment called py3
+conda create -q --name py3 python=3 $packages -y
+source activate py3
 
 # Dataset loading and profiling
 pip install -U xlrd
@@ -88,10 +85,10 @@ pip install -U tqdm
 pip install -U pytest
 pip install -U graphviz
 
-# # ML packages
-# pip install -U imbalanced-learn
-# pip install -U lightgbm # https://github.com/Microsoft/LightGBM
-# pip install -U xgboost
+# ML packages
+pip install -U imbalanced-learn
+pip install -U lightgbm # https://github.com/Microsoft/LightGBM
+pip install -U xgboost
 
 # # Foundational NLP packages
 # pip install -U spacy # https://spacy.io/
@@ -115,10 +112,16 @@ pip install -U graphviz
 # pip install -U keras
 # # http://pytorch.org/
 
-# # Add Jupyter kernel for this environment and set the display name
-# # http://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments
-# python -m ipykernel install --user --name py3 --display-name "py3"
-# source deactivate
+# # Plotly and Dash
+# pip install -U plotly # https://plot.ly/python/
+# pip install -U dash # The core dash backend
+# pip install -U dash-renderer # The dash front-end
+# pip install -U dash-html-components # HTML components
+# pip install -U dash-core-components # Supercharged components
+
+# Add Jupyter kernel for this environment and set the display name
+# http://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments
+python -m ipykernel install --user --name py3 --display-name "py3"
 
 # # "source activate"
 # echo '' >> ~/.bash_profile
@@ -130,3 +133,5 @@ pip install -U graphviz
 echo '' >> ~/.bash_profile
 echo '# enable conda activate' >> ~/.bash_profile
 echo '. $HOME/'$MC_DIR'/etc/profile.d/conda.sh' >> ~/.bash_profile
+echo '# activate the py3 environment' >> ~/.bash_profile
+echo 'conda activate py3' >> ~/.bash_profile
