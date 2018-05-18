@@ -7,9 +7,10 @@ if [ ! -d "$HOME/Downloads" ]; then
 fi
 }
 
+MC_DIR="miniconda3"
 MC_DL_FILE="Miniconda3-latest-Linux-x86_64.sh"
 MC_DL_PATH="$HOME/Downloads/$MC_DL_FILE"
-MC_DIR="$HOME/miniconda3"
+MC_DIR_PATH="$HOME/$MC_DIR"
 
 # # Exit if miniconda file already exists
 # {
@@ -27,10 +28,10 @@ fi
 }
 
 # install
-bash $MC_DL_PATH -b -p $MC_DIR
+bash $MC_DL_PATH -b -p $MC_DIR_PATH
 
 # Add to and source .bashrc
-export PATH="$MC_DIR/bin:$PATH"
+export PATH="$MC_DIR_PATH/bin:$PATH"
 
 # # Don't ask if you want to update
 # conda config --set always_yes yes
@@ -118,3 +119,14 @@ pip install -U graphviz
 # # http://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments
 # python -m ipykernel install --user --name py3 --display-name "py3"
 # source deactivate
+
+# # "source activate"
+# echo '' >> ~/.bash_profile
+# echo '# enable source activate' >> ~/.bash_profile
+# echo '# https://conda.io/docs/user-guide/install/macos.html' >> ~/.bash_profile
+# echo 'export PATH="$HOME/'$MC_DIR'/bin:$PATH"' >> ~/.bash_profile
+
+# "conda activate"
+echo '' >> ~/.bash_profile
+echo '# enable conda activate' >> ~/.bash_profile
+echo '. $HOME/'$MC_DIR'/etc/profile.d/conda.sh' >> ~/.bash_profile
