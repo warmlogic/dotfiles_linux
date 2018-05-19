@@ -82,6 +82,8 @@ pip install -U missingno # https://github.com/ResidentMario/missingno
 
 # Utility packages
 pip install -U tqdm
+pip install -U nbdime # nbdiff
+nbdime config-git --enable --global
 pip install -U pytest
 pip install -U graphviz
 
