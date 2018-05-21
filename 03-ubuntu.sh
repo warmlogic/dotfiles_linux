@@ -6,6 +6,4 @@
 # ensure system is updated and has basic build tools
 sudo apt-get update
 sudo apt-get --assume-yes upgrade
-sudo apt-get --assume-yes install htop tmux emacs
-sudo apt-get --assume-yes install build-essential gcc g++ make binutils
-sudo apt-get --assume-yes install software-properties-common
+sudo apt-get --assume-yes install build-essential gcc g++ make binutils htop tmux emacs software-properties-common swig

@@ -83,7 +83,7 @@ pip install -U missingno # https://github.com/ResidentMario/missingno
 # Utility packages
 pip install -U tqdm
 pip install -U nbdime # nbdiff
-nbdime config-git --enable --global
+nbdime config-git --enable --global # nbdiff
 pip install -U pytest
 pip install -U graphviz
 
@@ -91,6 +91,12 @@ pip install -U graphviz
 pip install -U imbalanced-learn
 pip install -U lightgbm # https://github.com/Microsoft/LightGBM
 pip install -U xgboost
+# auto-sklearn http://automl.github.io/auto-sklearn/stable/installation.html
+curl https://raw.githubusercontent.com/automl/auto-sklearn/master/requirements.txt | xargs -n 1 -L 1 pip install
+pip install -U auto-sklearn
+# TPOT http://epistasislab.github.io/tpot/installing/
+pip install -U deap update_checker stopit
+pip install -U tpot
 
 # # Foundational NLP packages
 # pip install -U spacy # https://spacy.io/
@@ -130,6 +136,8 @@ python -m ipykernel install --user --name py3 --display-name "py3"
 # echo '# enable source activate' >> ~/.bash_profile
 # echo '# https://conda.io/docs/user-guide/install/macos.html' >> ~/.bash_profile
 # echo 'export PATH="$HOME/'$MC_DIR'/bin:$PATH"' >> ~/.bash_profile
+# echo '# activate the py3 environment' >> ~/.bash_profile
+# echo 'source activate py3' >> ~/.bash_profile
 
 # "conda activate"
 echo '' >> ~/.bash_profile
