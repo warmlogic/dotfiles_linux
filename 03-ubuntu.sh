@@ -7,3 +7,7 @@
 sudo apt-get update
 sudo apt-get --assume-yes upgrade
 sudo apt-get --assume-yes install build-essential gcc g++ make binutils htop tmux emacs software-properties-common swig
+
+# For editing in SublimeText on a remote computer
+sudo wget -O /usr/local/bin/rsub https://raw.github.com/aurora/rmate/master/rmate
+sudo chmod +x /usr/local/bin/rsub
