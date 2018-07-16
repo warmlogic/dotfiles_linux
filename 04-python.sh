@@ -32,6 +32,8 @@ bash $MC_DL_PATH -b -p $MC_DIR_PATH
 
 # Add to and source .bashrc
 export PATH="$MC_DIR_PATH/bin:$PATH"
+# Clears history
+hash -r
 
 # # Don't ask if you want to update
 # conda config --set always_yes yes
@@ -49,7 +51,6 @@ conda info -a
 # This adds the conda-forge channel below the defaults library
 conda config --append channels conda-forge
 
-# with mkl
 packages='pip
 mkl
 numpy
@@ -79,12 +80,12 @@ pip install -U spotr # https://github.com/samuelreh/spotr
 
 # Dataset loading and profiling
 pip install -U xlrd
-pip install -U pandas-profiling # https://github.com/pandas-profiling/pandas-profiling
 pip install -U missingno # https://github.com/ResidentMario/missingno
+pip install -U pandas-profiling # https://github.com/pandas-profiling/pandas-profiling
 
-# # External datasets
-# pip install -U pandas-datareader # https://github.com/pydata/pandas-datareader
-# # pip install -U kaggle-cli
+# External datasets
+pip install -U pandas-datareader # https://github.com/pydata/pandas-datareader
+pip install -U kaggle-cli
 
 # Utility packages
 pip install -U tqdm
@@ -106,22 +107,23 @@ pip install -U auto-sklearn
 pip install -U deap update_checker stopit
 pip install -U tpot
 
-# # Foundational NLP packages
-# pip install -U spacy # https://spacy.io/
+# Foundational NLP packages
+pip install -U spacy # https://spacy.io/
+python -m spacy download en
 # python -m spacy download en_core_web_lg
-# pip install -U gensim # https://radimrehurek.com/gensim/
-# pip install -U nltk
+pip install -U gensim # https://radimrehurek.com/gensim/
+pip install -U nltk
 
-# # NLP building on top of spaCy or others
-# pip install -U textacy # https://github.com/chartbeat-labs/textacy
-# # pip install -U thinc # https://github.com/explosion/thinc
-# # pip install -U pattern # https://github.com/clips/pattern
+# NLP building on top of spaCy or others
+pip install -U textacy # https://github.com/chartbeat-labs/textacy
+# pip install -U thinc # https://github.com/explosion/thinc
+# pip install -U pattern # https://github.com/clips/pattern
 
-# # NLP utilities
-# pip install -U ftfy # https://github.com/LuminosoInsight/python-ftfy
-# pip install -U fuzzywuzzy # https://github.com/seatgeek/fuzzywuzzy
-# pip install -U python-Levenshtein # for fuzzywuzzy
-# pip install -U pyldavis # https://github.com/bmabey/pyLDAvis
+# NLP utilities
+pip install -U ftfy # https://github.com/LuminosoInsight/python-ftfy
+pip install -U fuzzywuzzy # https://github.com/seatgeek/fuzzywuzzy
+pip install -U python-Levenshtein # for fuzzywuzzy
+pip install -U pyldavis # https://github.com/bmabey/pyLDAvis
 
 # # Neural network packages
 # pip install -U tensorflow
