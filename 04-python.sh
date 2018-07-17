@@ -3,7 +3,7 @@
 # make a Downloads folder
 {
 if [ ! -d "$HOME/Downloads" ]; then
-    mkdir "$HOME/Downloads"
+    mkdir -p "$HOME/Downloads"
 fi
 }
 
