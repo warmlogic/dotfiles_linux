@@ -23,3 +23,6 @@ sudo apt-get --assume-yes install font-manager
 # 3. Run to edit in SublimeText: rsub myfile.txt
 sudo wget -O /usr/local/bin/rsub https://raw.github.com/aurora/rmate/master/rmate
 sudo chmod +x /usr/local/bin/rsub
+
+# # spell checking with pyenchant
+# sudo apt-get --assume-yes install enchant
