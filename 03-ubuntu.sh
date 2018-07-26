@@ -26,3 +26,6 @@ sudo chmod +x /usr/local/bin/rsub
 
 # # spell checking with pyenchant
 # sudo apt-get --assume-yes install enchant
+
+# grammar checking with LanguageTool (via language_check in Python)
+# sudo apt-get install default-jre
