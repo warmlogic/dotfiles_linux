@@ -6,7 +6,7 @@
 # ensure system is updated and has basic build tools
 sudo apt-get update
 sudo apt-get --assume-yes upgrade
-sudo apt-get --assume-yes install build-essential gcc g++ make binutils htop tmux emacs software-properties-common swig
+sudo apt-get --assume-yes install build-essential gcc g++ make binutils htop tmux emacs software-properties-common swig unzip
 
 # Fonts for matplotlib
 sudo apt-get --assume-yes install font-manager
