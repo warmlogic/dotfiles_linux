@@ -11,10 +11,10 @@ sudo apt-get --assume-yes install build-essential gcc g++ make binutils htop tmu
 # Fonts for matplotlib
 sudo apt-get --assume-yes install font-manager
 
-# # Optional: MS fonts
-# echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
-# sudo apt-get --assume-yes install ttf-mscorefonts-installer
-# # remove with: sudo apt-get remove --purge ttf-mscorefonts-installer
+# Optional: MS fonts
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+sudo apt-get --assume-yes install ttf-mscorefonts-installer
+# remove with: sudo apt-get remove --purge ttf-mscorefonts-installer
 
 # For editing in SublimeText on a remote computer
 # Requires additional setup: http://blog.macromates.com/2011/mate-and-rmate/
