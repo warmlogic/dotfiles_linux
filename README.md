@@ -10,13 +10,17 @@ This also includes `tmux` files from [this repo](https://github.com/gpakosz/.tmu
 
 ### Quick instructions overview
 
-1. Copy public and private SSH keys to `~/.ssh` and `chmod` to `600`
-1. Clone this repo (e.g., to `~/src/dotfiles_linux`) and `cd`
+1. If needed, copy public and private ssh keys from previous computer to `~/.ssh/` and `chmod` to `600`
+1. Clone this repo
+    1. `mkdir -p ~/github/warmlogic`
+    1. `cd ~/github/warmlogic/`
+    1. `git clone git@github.com:warmlogic/dotfiles.git`
+    1. `cd ~/github/warmlogic/dotfiles/`
 1. Run `01-bootstrap.sh` to copy necessary files (hidden and otherwise)
 1. `cp .extra ~/.extra` and edit, if desired (explained below)
 1. Run `03-ubuntu.sh` to set up Ubuntu packages preferences
 1. Restart your computer
-1. Run `04-python.sh` to set up a Python 3 conda environment
+1. Run `04-python.sh` to set up a Python 3 conda environment named `py3`
 
 More details below.
 
@@ -62,7 +66,7 @@ Install some packages:
 
 ### Python/Anaconda setup
 
-You may also want Python 3 and a number of useful packages related to data analysis (via [miniconda](https://conda.io/miniconda.html)):
+You may also want Python 3 and a number of useful packages related to data analysis (via [miniconda](https://conda.io/miniconda.html)). This installs everything listed in `init/environment-py3.yml`.
 
 ```bash
 ./04-python.sh
@@ -73,23 +77,28 @@ You may also want Python 3 and a number of useful packages related to data analy
 #### SublimeText Packages
 
 - [Package Control](https://packagecontrol.io/installation)
+- [Anaconda](http://damnwidget.github.io/anaconda/)
 - [WordCount](https://github.com/titoBouzout/WordCount)
 - [Pretty JSON](https://github.com/dzhibas/SublimePrettyJson)
-- [MarkdownHighlighting](https://github.com/braver/MarkdownHighlighting)
+- [MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing)
+    + Change color scheme to ArcDark
 - [INI](https://github.com/clintberry/sublime-text-2-ini)
 - [rsub](https://github.com/henrikpersson/rsub) ([see instructions](http://caitriggs.com/blog/using-sublime-text-editor-ec2-instance/))
 
 #### Jupyter Notebook Extensions
 
+These should be automatically turned on, via `.jupyter/nbconfig/notebook.js`
+
 - ExecuteTime
 - spellchecker
 - Table of Contents (2)
+- Collapsible headings
+- Highlight selected word
+- Scroll down
 
 ## TODO
 
-- Create `requirements.txt` file for pip, so we can run `pip install -r requirements.txt` instead of individual install commands
 - Consider including an [IPython startup script](http://ipython.readthedocs.io/en/stable/interactive/tutorial.html?highlight=startup#startup-files).
-- Set up "Open in Chrome" and "Open in Safari" AppleScripts, as described [here](https://www.engadget.com/2011/03/14/use-applescript-to-open-current-safari-url-in-google-chrome/).
 
 ## Feedback
 
