@@ -51,6 +51,11 @@ conda info -a
 # This adds the conda-forge channel below the defaults library
 conda config --append channels conda-forge
 
+# copy jupyter settings
+if [ ! -d "$HOME/.jupyter" ]; then
+  cp -r .jupyter $HOME/.jupyter
+fi
+
 # packages for base environment
 packages='awscli
 cython
