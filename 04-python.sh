@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# to manually nuke the current miniconda install
+# rm -rf ~/miniconda3 ~/.condarc ~/.conda ~/.continuum ~/.jupyter ~/.ipython ~/.local/share/jupyter/ ~/Library/Jupyter
+
 # make a Downloads folder
 {
 if [ ! -d "$HOME/Downloads" ]; then
