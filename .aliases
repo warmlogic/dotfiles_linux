@@ -98,7 +98,7 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 # unset jscbin;
 
 # # Trim new lines and copy to clipboard
-# alias c="tr -d '\n' | pbcopy"
+# alias copy="tr -d '\n' | pbcopy"
 
 # # Recursively delete `.DS_Store` files
 # alias cleanup_ds_store="find . -type f -name '*.DS_Store' -ls -delete"

@@ -3,15 +3,8 @@
 # to manually nuke the current miniconda install
 # rm -rf ~/miniconda3 ~/.condarc ~/.conda ~/.continuum ~/.jupyter ~/.ipython ~/.local/share/jupyter/ ~/Library/Jupyter
 
-# make a Downloads folder
-{
-if [ ! -d "$HOME/Downloads" ]; then
-    mkdir -p "$HOME/Downloads"
-fi
-}
-
 MC_DIR="miniconda3"
-MC_DL_FILE="Miniconda3-latest-Linux-x86_64.sh"
+MC_DL_FILE="Miniconda3-latest-MacOSX-x86_64.sh"
 MC_DL_PATH="$HOME/Downloads/$MC_DL_FILE"
 MC_DIR_PATH="$HOME/$MC_DIR"
 
@@ -80,6 +73,7 @@ notebook
 numpy
 pandas
 pip
+pylint
 pytest
 s3fs
 scipy
@@ -138,6 +132,7 @@ conda install xgboost -y
 
 # # For Python file linting
 # pip install -U mypy
+# pip install -U pylint
 
 # # Amazon AWS command line interface
 # pip install -U awscli
