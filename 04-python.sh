@@ -15,13 +15,13 @@ MC_DL_FILE="Miniconda3-latest-Linux-x86_64.sh"
 MC_DL_PATH="$HOME/Downloads/$MC_DL_FILE"
 MC_DIR_PATH="$HOME/$MC_DIR"
 
-# # Exit if miniconda file already exists
-# {
-# if [ -f "$MC_DL_PATH" ]; then
-#     echo "$MC_DL_PATH already exists! Delete before running this script to ensure installation is up-to-date."
-#     exit 0
-# fi
-# }
+# Exit if miniconda file already exists
+{
+if [ -f "$MC_DL_PATH" ]; then
+    echo "$MC_DL_PATH already exists! Delete before running this script to ensure installation is up-to-date."
+    exit 0
+fi
+}
 
 # Download miniconda file only if it does not already exist
 {
@@ -54,40 +54,37 @@ conda info -a
 # This adds the conda-forge channel below the defaults library
 conda config --append channels conda-forge
 
-# packages for base environment
-packages='awscli
-bz2file
-cython
-feather-format
-flake8
-ipykernel
-ipython
-ipywidgets
-jedi
-jupyter
-jupyter_contrib_nbextensions
-matplotlib
-mkl
-mypy
-nb_conda_kernels
-nbconvert
-nbdime
-nbformat
-notebook
-numpy
-pandas
-pip
-pylint
-pytest
-s3fs
-scipy
-seaborn
-tqdm
-widgetsnbextension
-xlrd'
+# # packages for base environment
+# packages='awscli
+# bz2file
+# cython
+# feather-format
+# flake8
+# ipykernel
+# ipython
+# ipywidgets
+# jupyter
+# jupyter_contrib_nbextensions
+# matplotlib
+# mkl
+# nb_conda_kernels
+# nbconvert
+# nbdime
+# nbformat
+# notebook
+# numpy
+# pandas
+# pip
+# pytest
+# s3fs
+# scipy
+# seaborn
+# tqdm
+# widgetsnbextension
+# xlrd'
 
-# Install packages to run Jupyter Notebook server with automatic kernels per environment via nb_conda_kernels
-conda install -n base $packages -y
+# # Install packages to run Jupyter Notebook server with automatic kernels per environment via nb_conda_kernels
+# conda install -n base $packages -y
 
 # enable usage of conda command
 . $HOME/$MC_DIR/etc/profile.d/conda.sh
@@ -119,9 +116,9 @@ echo '. $HOME/'$MC_DIR'/etc/profile.d/conda.sh' >> ~/.bash_profile
 echo '# activate the base environment' >> ~/.bash_profile
 echo 'conda activate' >> ~/.bash_profile
 
-# Additional ML packages
-# because it's difficult to install xgboost on macOS via the environment file
-conda install xgboost -y
+# # Additional ML packages
+# # because it's difficult to install xgboost on macOS via the environment file
+# conda install xgboost -y
 # # auto-sklearn http://automl.github.io/auto-sklearn/stable/installation.html
 # curl https://raw.githubusercontent.com/automl/auto-sklearn/master/requirements.txt | xargs -n 1 -L 1 pip install
 # pip install -U auto-sklearn
