@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # to manually nuke the current miniconda install
-# rm -rf ~/miniconda3 ~/.condarc ~/.conda ~/.continuum ~/.jupyter ~/.ipython ~/.local/share/jupyter/ ~/Library/Jupyter
+# rm -rf ~/miniconda ~/.condarc ~/.conda ~/.continuum ~/.jupyter ~/.ipython ~/.local/share/jupyter/ ~/Library/Jupyter
 
 # make a Downloads folder
 {
@@ -10,7 +10,7 @@ if [ ! -d "$HOME/Downloads" ]; then
 fi
 }
 
-MC_DIR="miniconda3"
+MC_DIR="miniconda"
 MC_DL_FILE="Miniconda3-latest-Linux-x86_64.sh"
 MC_DL_PATH="$HOME/Downloads/$MC_DL_FILE"
 MC_DIR_PATH="$HOME/$MC_DIR"
