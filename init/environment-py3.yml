@@ -3,6 +3,9 @@ channels:
   - defaults
   - conda-forge
 dependencies:
+  # - altair
+  # - vega_datasets
+  # - bokeh
   - bleach
   - bz2file
   - cycler
@@ -16,22 +19,24 @@ dependencies:
   - ipython
   - ipywidgets
   - jsonschema
-  - jupyter
-  - jupyter_client
-  - jupyter_console
-  - jupyter_core
-  - jupyter_contrib_nbextensions
+  - jupyterlab
+  - jupyter  # jupyter
+  - jupyter_client  # jupyter
+  - jupyter_console  # jupyter
+  - jupyter_core  # jupyter
+  - jupyter_contrib_nbextensions  # jupyter
+  - notebook  # jupyter
+  - widgetsnbextension  # jupyter
+  - nb_conda_kernels  # jupyter
   - libiconv
   - libpng
   - matplotlib
   - mkl
-  - nb_conda_kernels
-  - nbconvert
+  - nbconvert  # jupyter
   - nbdime  # nbdiff
-  - nbformat
+  - nbformat  # jupyter
   # - networkx
-  - nose  # test
-  - notebook
+  # - nose  # test
   - numpy
   - pandas
   - patsy  # for statsmodels
@@ -46,19 +51,15 @@ dependencies:
   - setuptools
   - awscli  # AWS
   - s3fs  # AWS
-  - smart_open  # for gensim
   - spacy  # NLP https://spacy.io/
   - sqlite
   - statsmodels
   - swig
   - olefile  # MS Office files
-  - xlrd  # MS Office files
+  - xlrd  # MS Office (Excel) files
+  - xlsxwriter  # MS Office (Excel) files
+  - openpyxl  # MS Office (Excel) files
   - tqdm  # utility
-  - widgetsnbextension
-  - jedi  # autocomplete
-  - flake8  # linter
-  - pylint  # linter
-  - mypy  # linter
   - missingno  # data profiling
   - pandas-profiling  # data profiling
   - pandas-summary  # data profiling
@@ -66,7 +67,6 @@ dependencies:
   - imbalanced-learn  # ML utility
   - scikit-image  # for lime
   - lightgbm  # ML https://github.com/Microsoft/LightGBM
-  - gensim  # NLP https://radimrehurek.com/gensim/
   - nltk  # NLP
   - textacy  # NLP https://github.com/chartbeat-labs/textacy
   - textblob  # NLP https://github.com/sloria/TextBlob
@@ -77,7 +77,14 @@ dependencies:
   - python-levenshtein  # NLP for fuzzywuzzy
   - pyldavis  # NLP https://github.com/bmabey/pyLDAvis
   - pip:
+    # - jedi  # autocomplete
+    - black  # formatter
+    - flake8  # linter
+    # - pylint  # linter
+    # - mypy  # linter
     - kaggle  # data access
+    - gensim  # NLP https://radimrehurek.com/gensim/
+    - smart_open  # for gensim
     - eli5  # explaining models https://github.com/TeamHG-Memex/eli5
     - lime  # explaining models https://github.com/marcotcr/lime
     - pdpbox  # explaining models https://github.com/SauceCat/PDPbox
@@ -97,7 +104,5 @@ dependencies:
     # - tensorflow  # NN
     # - keras  # NN
     # - plotly  # Plotly and Dash https://plot.ly/python/
-    # - dash  # Plotly and Dash - The core dash backend
-    # - dash-renderer  # Plotly and Dash - The dash front-end
-    # - dash-html-components  # Plotly and Dash - HTML components
-    # - dash-core-components  # Plotly and Dash - Supercharged components
+    # - dash  # The core dash backend
+    # - dash-daq  # DAQ components
