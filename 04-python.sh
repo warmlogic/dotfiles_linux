@@ -91,6 +91,12 @@ conda config --append channels conda-forge
 
 conda activate base
 
+# upgrade pip
+pip install -U pip
+
+# update the base environment with lots of good packages
+conda env update -f init/environment-py3.yml -q
+
 # enable nb_conda_kernels
 python -m nb_conda_kernels.install --enable --prefix="${CONDA_PREFIX}"
 
@@ -101,13 +107,7 @@ jupyter contrib nbextension install --user
 cp -r .jupyter/ $HOME/.jupyter/
 
 # configure git to use nbdiff
-nbdime config-git --enable --global # nbdiff
-
-# upgrade pip
-pip install -U pip
-
-# update the base environment with lots of good packages
-conda env update -f init/environment-py3.yml -q --force
+nbdime config-git --enable --global
 
 # add "conda activate" to ~/.bash_profile, enable using it for other envs
 echo '' >> ~/.bash_profile
