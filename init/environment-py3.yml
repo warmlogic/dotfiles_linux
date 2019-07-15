@@ -1,4 +1,4 @@
-name: py3
+name: base
 channels:
   - defaults
   - conda-forge
@@ -104,6 +104,6 @@ dependencies:
     # - spotr  # AWS https://github.com/samuelreh/spotr
     # - tensorflow  # NN
     # - keras  # NN
-    # - plotly  # Plotly and Dash https://plot.ly/python/
-    # - dash  # The core dash backend
-    # - dash-daq  # DAQ components
+    - plotly  # Plotly and Dash https://plot.ly/python/
+    - dash  # The core dash backend
+    - dash-daq  # DAQ components
